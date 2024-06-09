@@ -4,7 +4,7 @@ font-family: "Reddit Mono", monospace; */
 
 /* NORMALIZACION: */
 *{
-    padding: O;
+    padding: 0;
     margin: 0;
     box-sizing: border-box;
     font-family: "Reddit Mono", monospace;
@@ -12,12 +12,16 @@ font-family: "Reddit Mono", monospace; */
     text-decoration: none;
     color: white;
 }
-body{
+html, body {
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden; /* Evita el desplazamiento horizontal */
+}
+body {
     background-color: black;  /* TODO: BORRAR CUANDO TENGAMOS EL FONDO FINAL */
-
 }
 
-header{
+header {
     position: fixed; /* Esto hace que el Header se quede fijo en la parte superior */
     right: 0; 
     top: 0;
@@ -29,94 +33,84 @@ header{
     padding: 15px 3%;
     background-color: transparent;
 }
-.logo{
+.logo {
     font-size: 28px;
-    font-weight: 700; /* Este es el grueso de la letra del logo*/
+    font-weight: 700; /* Este es el grueso de la letra del logo */
 }
 
-.navlist{
+.navlist {
     display: flex;
 }
-.navlist a{ 
-    margin-left: 60px; /*se para las palabras del nav*/
+.navlist a { 
+    margin-left: 60px; /*separa las palabras del nav */
     font-size: 15px;
     font-weight: 600;
-    border-bottom: 2px solid transparent; /* Esto es para crear un subrayado transparente*/
-    transition: all .5s ease-in-out 0s; /* Esto es para transicionar todas las caracteristicas de .navlist a */
+    border-bottom: 2px solid transparent; /* Esto es para crear un subrayado transparente */
+    transition: all .5s ease-in-out;
 }
 
 .navlist a:hover {
-
-    /*Esto es para cuando me pare encima de un elemento de (a) de la navlist transicione*/
-    border-bottom: 2px solid white; /* este es el subyado blanco que parece abajo cuando lo seleccionamos*/
-
-
+    /* Esto es para cuando me pare encima de un elemento de (a) de la navlist transicione */
+    border-bottom: 2px solid white; /* este es el subrayado blanco que aparece abajo cuando lo seleccionamos */
 }
 
-#menu-icon{
-    display: none; /* lo pongo para que solo se vea cuando la pagina este colapsada */ 
-} 
-
-#menu-icon{
+#menu-icon {
+    display: none; /* lo pongo para que solo se vea cuando la página esté colapsada */ 
     font-size: 35px;
-    z-index: 101; /*para que este sobre el header*/
-    cursor: pointer; /* Pone el cursor como una manito */}
-
-
-#menu-toggle{
-    display: none; /* nunca quiero que sea vea el checkbox */
+    z-index: 101; /* para que esté sobre el header */
+    cursor: pointer; /* Pone el cursor como una manito */
 }
-.menu-icon-action{
+
+#menu-toggle {
+    display: none; /* nunca quiero que se vea el checkbox */
+}
+.menu-icon-action {
     display: none; /* para que no se le pueda hacer clic */
 }
-.hero{
+
+.hero {
     height: 100%;
     width: 100%;
     min-height: 100vh;
-    background: linear-gradient(245.59deg, #31394e 0%, #9d210e 25%, #131313 75% ); /*fondo con degradado*/
-    position: relative; /*para que sea relativo al contenedor (nos permite usar top, bottom, left y right*/
-    display: grid; /*para que el hero nos permita divirlo en dos columnas*/
-    grid-template-columns: 1fr 1fr; /*las dos columnas*/
-    align-items: center; /*para alinear vertical mente al hero*/
-    gap: 2rem; /*para que haya espacio de 2rem entre las dos columnas*/
+    background: linear-gradient(245.59deg, #31394e 0%, #9d210e 25%, #131313 75% ); /* fondo con degradado */
+    position: relative; /* para que sea relativo al contenedor (nos permite usar top, bottom, left y right) */
+    display: grid; /* para que el hero nos permita dividirlo en dos columnas */
+    grid-template-columns: 1fr 1fr; /* las dos columnas */
+    align-items: center; /* para alinear verticalmente al hero */
+    gap: 2rem; /* para que haya espacio de 2rem entre las dos columnas */
 }
-section{
+section {
     padding: 0 8%;
-
 }
 .hero-text h5 {
     font-size: 14px;
     font-weight: 400;
     margin-bottom: 25px;
 }
-
-.hero-text h1{
+.hero-text h1 {
     font-family: "Roboto Mono", monospace;
     font-size: 50px;
     line-height: 1;
     margin: 0 0 30px;
 }
-.hero-text h4{
+.hero-text h4 {
     font-size: 18px;
     font-weight: 600;
     margin-bottom: 10px;
 }
-
 .hero-text p {
-    font-size: 80% ;
+    font-size: 80%;
     margin-bottom: 40px;
-    line-height: 1.9;}
-.hero-img img{
-
+    line-height: 1.9;
+}
+.hero-img img {
     width: 400px;
     margin: 10% 0 0 10%;
     height: auto;
-    transition: all 5s linear; /*Esto se hace para que la transition sea lineal*/
+    transition: all 5s linear; /* Esto se hace para que la transición sea lineal */
 }
 .hero-img img:hover {
-    width: 450px;
-    opacity: 0.6;
-
+    width: 415px; /* Cambio más moderado */
 }
 
 .hero-text a {
@@ -131,30 +125,26 @@ section{
     text-transform: uppercase;
     transition: all .5s ease-in-out;
 }
-.hero-text a:hover { background-color: transparent;
-
+.hero-text a:hover {
+    background-color: transparent;
     border: 1px solid white;
     transform: translateX(8px);
-
 }
-
 .hero-text a.videos {
     background-color: transparent;
     border: 1px solid white;
     margin-left: 20px;
-
 }
 .hero-text a.videos i {
     vertical-align: middle;
     margin: 5px;
-
 }
 
-.icons{
+.icons {
     position: absolute;
     top: 30vh; /* Ajuste a la mitad de pantalla de los iconos */
     padding: 0 3%;
-    transform: translateY(-50);
+    transform: translateY(-50%);
 }
 
 .icons i {
@@ -163,19 +153,16 @@ section{
     font-size: 24px;
     transition: all .5s ease;
 }
-
 .icons i:hover {
     color: #9d210e;
     transform: translateY(-5px);
 }
-.scroll-down{
+.scroll-down {
     position: absolute;
     bottom: 6%;
-    right: 3%
+    right: 3%;
 }
-
 .scroll-down i {
-
     display: block;
     padding: 12px;
     font-size: 25px;
@@ -183,15 +170,12 @@ section{
     border-radius: 30px;
     transition: all .5s ease-in-out;
 }
-
 .scroll-down i:hover {
     transform: translateY(-5px);
-
 }
 
-/*aca vamos hacer Media Queries para que la web sea responvie*/
+/* Media Queries para hacer la web responsive */
 @media (max-width: 992px) {
-
     section {
         padding: 0 3%;
         transition: .2s;  
@@ -199,41 +183,40 @@ section{
     .hero-text {
         padding-top: 0;
     }
-    .hero-img{
+    .hero-img {
         text-align: center;
-
     }
-    .hero-text{
-    font-size: 70%;
+    .hero-text {
+        font-size: 70%;
     }
     .hero-img img {
         width: 80%;
-        margin: 10% 0 0 10%;
+        margin: 10% 0 0;
     }
-    .icons{
-        display: none
+    .icons {
+        display: none;
     }
     .scroll-down {
         display: none;
     }
 }
 
-@media (max-width: 758px){
-    .menu-icon-action{
+@media (max-width: 758px) {
+    .menu-icon-action {
         display: block;
     }
 
-    #menu-icon{
+    #menu-icon {
         display: block;
     }
 
-    .hero-text{
+    .hero-text {
         text-align: center;
         padding-top: 100px;
     }
 
     .hero-img img {
-        margin: 0;
+        margin: 0 auto; /* Centramos la imagen */
     }
 
     .hero {
@@ -242,12 +225,13 @@ section{
         grid-template-columns: 1fr;
     }
 
-    .navlist{
+    .navlist {
         position: absolute;
         top: 100%;
         right: -100%;
-        width: 200px;
-        height: 180px;
+        width: 100%;
+        max-width: 300px;
+        height: auto;
         background-color: #26070468;
         display: flex;
         flex-direction: column;
@@ -262,8 +246,7 @@ section{
         margin: 7px 0;
     }
 
-    #menu-toggle:checked + label.menu-icon-action + ul{
+    .navlist.open {
         right: 0;
     }
-
 }
